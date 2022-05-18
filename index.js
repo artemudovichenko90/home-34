@@ -6,7 +6,7 @@
  * @param {string} sep - Separator.
  * @returns {string} - Returns a string in the format Jaden Casing.
  */
- function toJadenCase(str, sep = ' ') {
+function toJadenCase(str, sep = ' ') {
   return str
     .split(sep)
     .filter(e => e.length > 0)
@@ -50,11 +50,11 @@ console.log(countVowe('I learn JavaScript!'));//6
 function pow(base, exponent) {
   if (exponent > 0) {
     return exponent === 1 ? base : base * pow(base, --exponent);
-  } else if (exponent < 0) {
-    return 1 / pow(base, Math.abs(exponent));
-  } else {
-    return 1;
   }
+  if (exponent < 0) {
+    return 1 / pow(base, Math.abs(exponent));
+  }
+  return 1;
 }
 //testing:
 console.log(Math.pow(3, 3) === pow(3, 3));   // true
@@ -90,7 +90,7 @@ function pairBrackets2(size, begin = '(', end = ')') {
 }
 //testing:
 console.log(pairBrackets(4));//(((())))
-console.log(pairBrackets2(4,'[',']'));//[[[[]]]]
+console.log(pairBrackets2(4, '[', ']'));//[[[[]]]]
 
 
 //5) Дан массив чисел. используя Math и спред оператор
