@@ -109,8 +109,7 @@ console.log(Math.max(...arr));//3
  * @returns {number} - Returns 0 if args length is zero.
  */
 const multipl = (...args) => {
-  if (args.length === 0) return 0;
-  return args.reduce((prev, curr) => prev * curr);
+  return args.length === 0 ? 0 : args.reduce((prev, curr) => prev * curr);
 }
 //testing:
 console.log(multipl(1, 2, 3));//6
